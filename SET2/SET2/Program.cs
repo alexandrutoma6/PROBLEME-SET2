@@ -18,6 +18,121 @@ namespace SET2
             //p6();
             //p7();
             //p8();
+            //p9();
+            //p10();
+            //p11();
+        }
+
+        /// <summary>
+        /// Se da o secventa de n numere. Se cere sa se caculeze suma inverselor acestor numere.
+        /// </summary>
+
+        static int invers(int numar2)
+        {
+            int reverse = 0;
+            while (numar2 != 0)
+            {
+                reverse = reverse * 10 + numar2 % 10;
+                numar2 /= 10;
+            }
+            return reverse;
+        }
+        private static void p11()
+        {
+            int n, numar, suma = 0;
+            Console.Write("n= ");
+            n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("numar= ");
+                numar = int.Parse(Console.ReadLine());
+                suma += invers(numar);
+            }
+            Console.WriteLine($"suma inverselor numerelor din sir este {suma}");
+            
+        }
+
+        /// <summary>
+        ///Se da o secventa de n numere. Care este numarul maxim de numere consecutive egale din secventa. 
+        /// </summary>
+        private static void p10()
+        {
+            int n, consecutiv = 0, numar1, numar2, count = 0;
+            Console.Write("n = ");
+            n = int.Parse(Console.ReadLine());
+            Console.Write("numar = ");
+            numar1 = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n-1; i++)
+            {
+                Console.Write("numar = ");
+                numar2 = int.Parse(Console.ReadLine());
+                if (numar1 != numar2)
+                {
+                    count = 0;
+                }
+                if (numar1 == numar2)
+                {
+                    count++;
+                }
+                
+                if (count >= consecutiv)
+                {
+                    consecutiv = count;
+                }
+                
+                numar1 = numar2;
+            }
+            if(consecutiv != 0)
+            {
+                Console.WriteLine($"in sir, se gasesc {consecutiv + 1} numere egale consecutive ");
+            }
+            else
+            {
+                Console.WriteLine($"in sir, nu se gasesc numere egale consecutive ");
+            }
+        }
+
+        /// <summary>
+        /// Sa se determine daca o secventa de n numere este monotona. 
+        /// Secventa monotona = secventa monoton crescatoare sau monoton descrescatoare. 
+        /// </summary>
+        private static void p9()
+        {
+            int n, numar1, numar2, monotonie = 0;
+            Console.Write("n= ");
+            n = int.Parse(Console.ReadLine());
+            Console.Write("numar = ");
+            numar1 = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n-1; i++)
+            {
+                Console.Write("numar = ");
+                numar2 = int.Parse(Console.ReadLine());
+                if (numar1 <= numar2)
+                {
+                    monotonie++;
+                }
+                else
+                {
+                    monotonie--;
+                }
+                if(monotonie == 0)
+                {
+                    break;
+                }
+                numar1 = numar2;
+            }
+            if(monotonie > 0)
+            {
+                Console.WriteLine($"sirul de {n} numere este crescator");
+            }
+            if(monotonie < 0)
+            {
+                Console.WriteLine($"sirul de {n} numere este descrescator");
+            }
+            if(monotonie == 0)
+            {
+                Console.WriteLine($"sirul de {n} numere nu este monoton");
+            }
         }
 
         /// <summary>
