@@ -21,6 +21,100 @@ namespace SET2
             //p9();
             //p10();
             //p11();
+            //p12();
+            //p13()??????????;
+            //p14()??????????;
+            p15();
+        }
+
+        /// <summary>
+        /// O secventa bitonica este o secventa de numere care incepe monoton crescator si continua monoton descrecator. 
+        /// De ex. 1,2,2,3,5,4,4,3 este o secventa bitonica. 
+        /// Se da o secventa de n numere. Sa se determine daca este bitonica.
+        /// </summary>
+        private static void p15()
+        {
+            int n, crescator = 0, descrescator = 0;
+            Console.Write("n= ");
+            n = int.Parse(Console.ReadLine());
+            Console.Write("numar= ");
+            int numar1 = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n-1; i++)
+            {
+                Console.Write("numar= ");
+                int numar2 = int.Parse(Console.ReadLine());
+                if(numar2 >= numar1)
+                {
+                    crescator++;
+                }
+                if(numar2 < numar1)
+                {
+                    descrescator++;
+                }
+                if(descrescator != 0)
+                {
+                    crescator = -1;
+
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// O <secventa monotona rotita> este o secventa de numere monotona sau poate fi transformata intr-o secventa montona prin rotiri succesive. 
+        /// Determinati daca o secventa de n numere este o secventa monotona rotita. 
+        /// </summary>
+        private static void p14()
+        {
+            
+        }
+
+        /// <summary>
+        /// O <secventa crescatoare rotita> este o secventa de numere care este in ordine crescatoare sau poate fi transformata intr-o secventa in ordine crescatoare prin rotiri succesive 
+        /// (rotire cu o pozitie spre stanga = toate elementele se muta cu o pozitie spre stanga si primul element devine ultimul).
+        /// Determinati daca o secventa de n numere este o secventa crescatoare rotita. 
+        /// </summary>
+        private static void p13()
+        {
+            
+        }
+
+        /// <summary>
+        /// Cate grupuri de numere consecutive diferite de zero sunt intr-o secventa de n numere.
+        /// Considerati fiecare astfel de grup ca fiind un cuvant, zero fiind delimitator de cuvinte.
+        /// De ex. pentru secventa 1, 2, 0, 3, 4, 5, 0, 0, 6, 7, 0, 0 raspunsul este 3. 
+        /// </summary>
+        private static void p12()
+        {
+            int n, grup = 0, cuvant = 0;
+            Console.Write("n= ");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("numar = ");
+                int numar = int.Parse(Console.ReadLine());
+                if (numar == 0)
+                {
+                    if(cuvant != 0)
+                    {
+                        grup++;
+                    }
+                    else
+                    {
+                        cuvant = 0;
+                    }
+                }
+                if(numar != 0)
+                {
+                    cuvant++;
+                }
+            }
+            if(cuvant != 0)
+            {
+                grup++;
+            }
+            Console.WriteLine($"in secventa exista {grup} grupuri de numere delimitate de 0");
         }
 
         /// <summary>
