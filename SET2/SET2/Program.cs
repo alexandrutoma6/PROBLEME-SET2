@@ -10,21 +10,173 @@ namespace SET2
     {
         static void Main(string[] args)
         {
-            //p1();
-            //p2();
-            //p3();
-            //p4();
-            //p5();
-            //p6();
-            //p7();
-            //p8();
-            //p9();
-            //p10();
-            //p11();
-            //p12();
-            //p13()??????????;
-            //p14()??????????;
-            p15();
+            Console.WriteLine();
+            Console.WriteLine("1. Se da o secventa de n numere. Sa se determine cate din ele sunt pare. ");
+            Console.WriteLine("2. Se da o secventa de n numere. Sa se determina cate sunt negative, cate sunt zero si cate sunt pozitive. ");
+            Console.WriteLine("3. Calculati suma si produsul numerelor de la 1 la n. ");
+            Console.WriteLine("4. Se da o secventa de n numere. Determinati pe ce pozitie se afla in secventa un numara a. Se considera ca primul element din secventa este pe pozitia zero. ");
+            Console.WriteLine("5. Cate elemente dintr-o secventa de n numere sunt egale cu pozitia pe care apar in secventa. Se considera ca primul element din secventa este pe pozitia 0. ");
+            Console.WriteLine("6. Se da o secventa de n numere. Sa se determine daca numerele din secventa sunt in ordine crescatoare. ");
+            Console.WriteLine("7. Se da o secventa de n numere. Sa se determine cea mai mare si cea mai mica valoare din secventa. ");
+            Console.WriteLine("8. Determianti al n-lea numar din sirul lui Fibonacci. Sirul lui Fibonacci se construieste astfel: f1 = 0, f2 = 1, f_n = f_(n-1) + f(n-2).");
+            Console.WriteLine("9. Sa se determine daca o secventa de n numere este monotona. Secventa monotona = secventa monoton crescatoare sau monoton descrescatoare. ");
+            Console.WriteLine("10. Se da o secventa de n numere. Care este numarul maxim de numere consecutive egale din secventa. ");
+            Console.WriteLine("11. Se da o secventa de n numere. Se cere sa se caculeze suma inverselor acestor numere. ");
+            Console.WriteLine("12. Cate grupuri de numere consecutive diferite de zero sunt intr-o secventa de n numere. Considerati fiecare astfel de grup ca fiind un cuvant, zero fiind delimitator de cuvinte. ");
+            Console.WriteLine("13. O <secventa crescatoare rotita> este o secventa de numere care este in ordine crescatoare sau poate fi transformata intr-o secventa in ordine crescatoare prin rotiri succesive. Determinati daca o secventa de n numere este o secventa crescatoare rotita. ");
+            Console.WriteLine("14. O <secventa monotona rotita> este o secventa de numere monotona sau poate fi transformata intr-o secventa montona prin rotiri succesive. Determinati daca o secventa de n numere este o secventa monotona rotita. ");
+            Console.WriteLine("15. O secventa bitonica este o secventa de numere care incepe monoton crescator si continua monoton descrecator. Se da o secventa de n numere. Sa se determine daca este bitonica. ");
+            Console.WriteLine("16. O <secventa bitonica rotita> este o secventa bitonica sau una ca poate fi transformata intr-o secventa bitonica prin rotiri succesive (rotire = primul element devine ultimul). Se da o secventa de n numere. Se cere sa se determine daca este o secventa bitonica rotita. ");
+            Console.WriteLine("17. Se da o secventa de 0 si 1, unde 0 inseamna paranteza deschisa si 1 inseamna paranteza inchisa. Determinati daca secventa reprezinta o secventa de paranteze corecta si,  daca este, determinati nivelul maxim de incuibare a parantezelor. ");
+
+            Console.Write("ALEGETI PROBLEMA NUMARUL: ");
+            int problema = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.WriteLine("------------------------------------------------------------------------------------------------");
+            Console.WriteLine();
+
+            if (problema == 1)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("1. Se da o secventa de n numere. Sa se determine cate din ele sunt pare. ");
+                Console.WriteLine(); 
+                p1();
+            }
+            if (problema == 2)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("2. Se da o secventa de n numere. Sa se determina cate sunt negative, cate sunt zero si cate sunt pozitive. ");
+                Console.WriteLine();
+                p2();
+            }
+            if (problema == 3)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("3. Calculati suma si produsul numerelor de la 1 la n. ");
+                Console.WriteLine();
+                p3();
+            }
+            if (problema == 4)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("4. Se da o secventa de n numere. Determinati pe ce pozitie se afla in secventa un numara a. Se considera ca primul element din secventa este pe pozitia zero. ");
+                Console.WriteLine();
+                p4();
+            }
+            if (problema == 5)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("5. Cate elemente dintr-o secventa de n numere sunt egale cu pozitia pe care apar in secventa. Se considera ca primul element din secventa este pe pozitia 0. ");
+                Console.WriteLine();
+                p5();
+            }
+            if (problema == 6)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("6. Se da o secventa de n numere. Sa se determine daca numerele din secventa sunt in ordine crescatoare. ");
+                Console.WriteLine();
+                p6();
+            }
+            if (problema == 7)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("7. Se da o secventa de n numere. Sa se determine cea mai mare si cea mai mica valoare din secventa. ");
+                Console.WriteLine();
+                p7();
+            }
+            if (problema == 8)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("8. Determianti al n-lea numar din sirul lui Fibonacci. Sirul lui Fibonacci se construieste astfel: f1 = 0, f2 = 1, f_n = f_(n-1) + f(n-2).");
+                Console.WriteLine();
+                p8();
+            }
+            if (problema == 9)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("9. Sa se determine daca o secventa de n numere este monotona. Secventa monotona = secventa monoton crescatoare sau monoton descrescatoare. ");
+                Console.WriteLine();
+                p9();
+            }
+            if (problema == 10)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("10. Se da o secventa de n numere. Care este numarul maxim de numere consecutive egale din secventa. ");
+                Console.WriteLine();
+                p10();
+            }
+            if (problema == 11)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("11. Se da o secventa de n numere. Se cere sa se caculeze suma inverselor acestor numere. ");
+                Console.WriteLine();
+                p11();
+            }
+            if (problema == 12)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("12. Cate grupuri de numere consecutive diferite de zero sunt intr-o secventa de n numere. Considerati fiecare astfel de grup ca fiind un cuvant, zero fiind delimitator de cuvinte. ");
+                Console.WriteLine();
+                p12();
+            }
+            if (problema == 13)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("13. O <secventa crescatoare rotita> este o secventa de numere care este in ordine crescatoare sau poate fi transformata intr-o secventa in ordine crescatoare prin rotiri succesive. Determinati daca o secventa de n numere este o secventa crescatoare rotita. ");
+                Console.WriteLine();
+                p13();
+            }
+            if (problema == 14)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("14. O <secventa monotona rotita> este o secventa de numere monotona sau poate fi transformata intr-o secventa montona prin rotiri succesive. Determinati daca o secventa de n numere este o secventa monotona rotita. ");
+                Console.WriteLine();
+                p14();
+            }
+            if (problema == 15)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("15. O secventa bitonica este o secventa de numere care incepe monoton crescator si continua monoton descrecator. Se da o secventa de n numere. Sa se determine daca este bitonica. ");
+                Console.WriteLine();
+                p15();
+            }
+            if (problema == 16)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("16. O <secventa bitonica rotita> este o secventa bitonica sau una ca poate fi transformata intr-o secventa bitonica prin rotiri succesive (rotire = primul element devine ultimul). Se da o secventa de n numere. Se cere sa se determine daca este o secventa bitonica rotita. ");
+                Console.WriteLine();
+                //p16();
+            }
+            if (problema == 17)
+            {
+                Console.WriteLine($"Ati ales problema numarul {problema}: ");
+                Console.WriteLine();
+                Console.WriteLine("17. Se da o secventa de 0 si 1, unde 0 inseamna paranteza deschisa si 1 inseamna paranteza inchisa. Determinati daca secventa reprezinta o secventa de paranteze corecta si,  daca este, determinati nivelul maxim de incuibare a parantezelor. ");
+                Console.WriteLine();
+                //p17();
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("------------------------------------------------------------------------------------------------");
+            Console.WriteLine();
+
         }
 
         /// <summary>
