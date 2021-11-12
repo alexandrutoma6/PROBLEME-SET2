@@ -162,7 +162,7 @@ namespace SET2
                 Console.WriteLine();
                 Console.WriteLine("16. O <secventa bitonica rotita> este o secventa bitonica sau una ca poate fi transformata intr-o secventa bitonica prin rotiri succesive (rotire = primul element devine ultimul). Se da o secventa de n numere. Se cere sa se determine daca este o secventa bitonica rotita. ");
                 Console.WriteLine();
-                //p16();
+                p16();
             }
             if (problema == 17)
             {
@@ -170,7 +170,7 @@ namespace SET2
                 Console.WriteLine();
                 Console.WriteLine("17. Se da o secventa de 0 si 1, unde 0 inseamna paranteza deschisa si 1 inseamna paranteza inchisa. Determinati daca secventa reprezinta o secventa de paranteze corecta si,  daca este, determinati nivelul maxim de incuibare a parantezelor. ");
                 Console.WriteLine();
-                //p17();
+                p17();
             }
 
             Console.WriteLine();
@@ -180,35 +180,81 @@ namespace SET2
         }
 
         /// <summary>
+        /// Se da o secventa de 0 si 1, unde 0 inseamna paranteza deschisa si 1 inseamna paranteza inchisa. 
+        /// Determinati daca secventa reprezinta o secventa de paranteze corecta si,  daca este, determinati nivelul maxim de incuibare a parantezelor.
+        /// </summary>
+        private static void p17()
+        {
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private static void p16()
+        {
+            
+        }
+
+        /// <summary>
         /// O secventa bitonica este o secventa de numere care incepe monoton crescator si continua monoton descrecator. 
         /// De ex. 1,2,2,3,5,4,4,3 este o secventa bitonica. 
         /// Se da o secventa de n numere. Sa se determine daca este bitonica.
         /// </summary>
         private static void p15()
         {
-            int n, crescator = 0, descrescator = 0;
+            int numar1, numar2, binotonie = 0;
+            int verificare = 0, exit = 0;
             Console.Write("n= ");
-            n = int.Parse(Console.ReadLine());
-            Console.Write("numar= ");
-            int numar1 = int.Parse(Console.ReadLine());
-            for (int i = 0; i < n-1; i++)
+            int n = int.Parse(Console.ReadLine());
+            if (n <= 2)
+            {
+                Console.WriteLine("Sirul nu este bitonic");
+            }
+            else
             {
                 Console.Write("numar= ");
-                int numar2 = int.Parse(Console.ReadLine());
-                if(numar2 >= numar1)
-                {
-                    crescator++;
-                }
-                if(numar2 < numar1)
-                {
-                    descrescator++;
-                }
-                if(descrescator != 0)
-                {
-                    crescator = -1;
+                numar1 = int.Parse(Console.ReadLine());
 
+                for (int i = 1; i < n; i++)
+                {
+                    Console.Write("numar= ");
+                    numar2 = int.Parse(Console.ReadLine());
+                    if(numar1 > numar2)
+                    {
+                        binotonie = binotonie * 10 + 1;
+                    }
+                    if (numar2 > numar1)
+                    {
+                        binotonie = binotonie * 10 + 2;
+                    }
+                    numar1 = numar2;
                 }
-
+                if(binotonie==0)
+                {
+                    exit = 3;
+                }
+                while(binotonie !=0 && exit != 2)
+                {
+                    if(verificare == 0)
+                    {
+                        verificare = binotonie % 10;
+                        binotonie /= 10;
+                    }
+                    if(verificare != binotonie % 10)
+                    {
+                        exit++;
+                    }
+                    binotonie /= 10;
+                }
+                if(exit == 2)
+                {
+                    Console.WriteLine("Sirul este bitonic");
+                }
+                else
+                {
+                    Console.WriteLine("Sirul nu este bitonic");
+                }
             }
         }
 
