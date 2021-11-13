@@ -185,11 +185,55 @@ namespace SET2
         /// </summary>
         private static void p17()
         {
-
+            int cifra, cifra_zero = 0, cifra_unu = 0, incuibare = 0, obs = 0, maxim = 0;
+            Console.Write("n= ");
+            int n = int.Parse(Console.ReadLine());
+            if(n==1 || n==0 || n % 2 != 0)
+            {
+                Console.WriteLine("Secventa nu reprezinta o secventa de paranteze corecte ");
+            }
+            else
+            {
+                for (int i = 1; i <= n && obs != 1; i++)
+                {
+                    Console.Write($"cifra {i} = ");
+                    cifra = int.Parse(Console.ReadLine());
+                    if(cifra == 0)
+                    {
+                        cifra_zero++;
+                        incuibare++;
+                    }
+                    if(cifra == 1)
+                    {
+                        cifra_unu++;
+                        incuibare--;
+                    }
+                    if (cifra_zero < cifra_unu)
+                    {
+                        obs = 1;
+                        Console.WriteLine("Secventa nu reprezinta o secventa de paranteze corecte");
+                    }
+                    if (incuibare >= maxim)
+                    {
+                        maxim = incuibare;
+                    }
+                }
+                if (cifra_zero != cifra_unu && obs == 0)
+                {
+                    obs = 1;
+                    Console.WriteLine("Secventa nu reprezinta o secventa de paranteze corecte");
+                }
+                if (obs == 0)
+                {
+                    Console.WriteLine("Secventa reprezinta o secventa de paranteze corecte");
+                    Console.WriteLine($"Numarul maxim de incuibare a parantezelor este {maxim}");
+                }
+            }
         }
 
         /// <summary>
-        /// 
+        /// O <secventa bitonica rotita> este o secventa bitonica sau una ca poate fi transformata intr-o secventa bitonica prin rotiri succesive (rotire = primul element devine ultimul).
+        /// Se da o secventa de n numere. Se cere sa se determine daca este o secventa bitonica rotita.
         /// </summary>
         private static void p16()
         {
@@ -264,7 +308,48 @@ namespace SET2
         /// </summary>
         private static void p14()
         {
-            
+            int numar1 = 0, numar2 = 0, obs = 0, monotonie = 0, save = 0; 
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("numar 1 = ");
+            numar1 = int.Parse(Console.ReadLine());
+            save = numar1;
+            for (int i = 2; i <= n; i++)
+            {
+                Console.Write($"numar {i} = ");
+                numar2 = int.Parse(Console.ReadLine());
+                if (numar1 < numar2 && monotonie == 0)
+                {
+                    monotonie++;
+                }
+                if(numar2 < numar1 && monotonie == 0)
+                {
+                    monotonie--;
+                }
+                if (numar1 > numar2 && monotonie > 0)
+                {
+                    if(numar2 <= save)
+                    {
+                        obs = 1;
+                    }
+                }
+                if (numar2 > numar1 && monotonie > 0)
+                {
+                    if (numar2 <= save)
+                    {
+                        obs = 1;
+                    }
+                }
+                numar1 = numar2;
+            }
+            if(obs == 1)
+            {
+                Console.WriteLine("Secventa este monotona rotita");
+            }
+            if(obs == 0)
+            {
+                Console.WriteLine("Secventa nu este monotona rotita");
+            }
         }
 
         /// <summary>
@@ -274,7 +359,39 @@ namespace SET2
         /// </summary>
         private static void p13()
         {
-            
+            int numar1 = 0, numar2 = 0, obs = 0, save = 0;
+            Console.Write("n= ");
+            int n = int.Parse(Console.ReadLine());
+
+            Console.Write("numar 1 = ");
+            numar1 = int.Parse(Console.ReadLine());
+            save = numar1;
+            for (int i = 2; i <= n && obs < 2; i++)
+            {
+                Console.Write($"numar {i} = ");
+                numar2 = int.Parse(Console.ReadLine());
+                if(numar1 > numar2)
+                {
+                    obs++;
+                    if (numar2 > numar1)
+                    {
+                        obs++;
+                    }
+                }
+                numar1 = numar2;
+            }
+            if(obs == 0)
+            {
+                Console.WriteLine("Secventa este crescatoare");
+            }
+            if (obs == 1)
+            {
+                Console.WriteLine("Secventa este crescatoare rotita");
+            }
+            if (obs == 2)
+            {
+                Console.WriteLine("Secventa nu este crescatoare rotita");
+            }
         }
 
         /// <summary>
