@@ -32,6 +32,7 @@ namespace SET2
             Console.Write("ALEGETI PROBLEMA NUMARUL: ");
             int problema = int.Parse(Console.ReadLine());
 
+            
             Console.WriteLine();
             Console.WriteLine("------------------------------------------------------------------------------------------------");
             Console.WriteLine();
@@ -237,7 +238,55 @@ namespace SET2
         /// </summary>
         private static void p16()
         {
-            
+            int numar1 = 0, numar2 = 0, obs = 0, bitonie = 0, save = 0, monotonie = 0;
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("numar 1 = ");
+            numar1 = int.Parse(Console.ReadLine());
+            save = numar1;
+            for (int i = 2; i <= n && obs != 3; i++)
+            {
+                Console.Write($"numar {i} = ");
+                numar2 = int.Parse(Console.ReadLine());
+
+                if (numar1 > numar2 && monotonie == 0)
+                {
+                    monotonie--;
+                }
+                if (numar1 < numar2 && monotonie == 0 )
+                {
+                    monotonie++;
+                }
+                if(monotonie < 0)
+                {
+                    if(numar2 > numar1)
+                    {
+                        obs++;
+                        monotonie = 1;
+                    }
+                }
+                if(monotonie > 0)
+                {
+                    if (numar1 > numar2)
+                    {
+                        obs++;
+                        monotonie = -1;
+                    }
+                }
+                numar1 = numar2;
+            }
+            if(numar2 < save)
+            {
+                obs = 3;
+            }
+            if(obs == 2)
+            {
+                Console.WriteLine("Secventa e bitonica rotita");
+            }
+            else
+            {
+                Console.WriteLine("Secventa nu e bitonica rotita");
+            }
         }
 
         /// <summary>
@@ -318,11 +367,11 @@ namespace SET2
             {
                 Console.Write($"numar {i} = ");
                 numar2 = int.Parse(Console.ReadLine());
-                if (numar1 < numar2 && monotonie == 0)
+                if (numar2 > numar1 && monotonie == 0)
                 {
                     monotonie++;
                 }
-                if(numar2 < numar1 && monotonie == 0)
+                if(numar1 > numar2 && monotonie == 0)
                 {
                     monotonie--;
                 }
@@ -332,14 +381,37 @@ namespace SET2
                     {
                         obs = 1;
                     }
+                    else
+                    {
+                        obs = 0;
+                    }
                 }
-                if (numar2 > numar1 && monotonie > 0)
+                if (numar2 > numar1 && monotonie < 0)
                 {
-                    if (numar2 <= save)
+                    if (numar2 >= save)
                     {
                         obs = 1;
                     }
+                    else
+                    {
+                        obs = 0;
+                    }
                 }
+                if (numar2 > numar1 && monotonie > 0)
+                {
+                    if (numar2 > save)
+                    {
+                        obs = 0;
+                    }
+                }
+                if (numar2 < numar1 && monotonie < 0)
+                {
+                    if (numar2 < save)
+                    {
+                        obs = 0;
+                    }
+                }
+
                 numar1 = numar2;
             }
             if(obs == 1)
